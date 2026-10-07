@@ -1,0 +1,29 @@
+﻿<Window x:Class="FelviGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FelviGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        
+        <DataGrid x:Name="diakokDg" AutoGenerateColumns="True" Grid.Column="0" SelectionMode="Single" SelectionChanged="diakokDg_SelectionChanged" />
+
+        <StackPanel Grid.Column="1">
+            <Label Content="Jelentkezett 1 - 3. hely valamelyikén:" x:Name="jelentkezettLb"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="0 25px 0 25px">
+            <Button Content="Ágazatonkénti jelentkezők" x:Name="jelentkezokBtn" Click="jelentkezokBtn_Click" />
+            <ListBox x:Name="jelentkezokLb" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="0 100px 0 0">
+            <Button Content="NYEK tagozat átlagos pontszám" x:Name="NyekBtn" Click="NyekBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
